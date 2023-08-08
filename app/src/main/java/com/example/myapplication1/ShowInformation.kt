@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
+import com.example.myapplication1.fragment.Information
 
 class ShowInformation : AppCompatActivity() {
 
@@ -24,8 +25,10 @@ class ShowInformation : AppCompatActivity() {
 
         edtNombre.setText(nombreUsuario)
         btnRegresar.setOnClickListener {
-            val intent = Intent(this@ShowInformation, MainActivity::class.java)
-            startActivity(intent)
+            //val intent = Intent(this@ShowInformation, MainActivity::class.java)
+            //startActivity(intent)
+            val fragment = Information()
+            supportFragmentManager.beginTransaction().replace(R.id.fragment_container,  fragment).commit()
         }
     }
 }

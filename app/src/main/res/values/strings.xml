@@ -2,4 +2,20 @@
     <string name="app_name">My Application1</string>
     <string name="labelNombre">Nombre Usuario</string>
     <string name="txtButton">Regresar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Etiquetas para registro -->
+    <string name="txtNombreCliente">Nombre Cliente</string>
+    <string name="hindNombreCliente">Ingresa nombre cliente</string>
+    <string name="txtEmail">Correo Electrónico</string>
+    <string name="hindEmail">Ingresa correo electrónico</string>
+    <string name="txtPhone">Telefono</string>
+    <string name="hindPhone">Ingresa telefono</string>
+    <string name="txtGenero">Genero</string>
+    <string name="txtMasc">Masculino</string>
+    <string name="txtFem">Femenino</string>
+    <string name="txtPassword">Password</string>
+    <string name="hindPassword">Ingresa password</string>
+    <string name="btnGuarda">Guardar</string>
 </resources>
