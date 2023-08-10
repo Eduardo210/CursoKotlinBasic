@@ -4,12 +4,14 @@
     android:id="@+id/fragment_data"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".fragment.Information">
 
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,7 +28,7 @@
                 android:text="@string/txtNombreCliente" />
 
             <EditText
-                android:id="@+id/editTextText"
+                android:id="@+id/edtCliente"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -41,7 +43,7 @@
                 android:text="@string/txtEmail" />
 
             <EditText
-                android:id="@+id/editTextTextEmailAddress"
+                android:id="@+id/edtCorreo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -56,7 +58,7 @@
                 android:text="@string/txtPhone" />
 
             <EditText
-                android:id="@+id/editTextPhone"
+                android:id="@+id/edtTelefono"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -81,13 +83,13 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/radioButton2"
+                        android:id="@+id/rdbMasculino"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/txtMasc" />
 
                     <RadioButton
-                        android:id="@+id/radioButton"
+                        android:id="@+id/rdbFemenino"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
@@ -103,7 +105,7 @@
                 android:text="@string/txtPassword" />
 
             <EditText
-                android:id="@+id/editTextNumberPassword"
+                android:id="@+id/edtPasswordInformation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -111,13 +113,40 @@
                 android:inputType="numberPassword" />
 
             <Button
-                android:id="@+id/button"
+                android:id="@+id/btnGuardar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
                 android:text="@string/btnGuarda" />
+
+            <Button
+                android:id="@+id/btnConsulta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:text="Consultar" />
+
+            <Button
+                android:id="@+id/btnDeleteData"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:text="Eliminar dato" />
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:text="Eliminar Archivo" />
         </LinearLayout>
     </RelativeLayout>
 </FrameLayout>
