@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.RadioButton
+import android.widget.RadioGroup
 import android.widget.Toast
 import com.example.myapplication1.R
 
@@ -22,8 +24,9 @@ class Information : Fragment() {
     private lateinit var btnConsultar : Button
     private lateinit var btnBorrarDato : Button
     private lateinit var btnBorrarArchivo : Button
-
-
+    private lateinit var rgGenero : RadioGroup
+    private lateinit var rdbMasc : RadioButton
+    private lateinit var rdbFem : RadioButton
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -50,7 +53,19 @@ class Information : Fragment() {
         btnBorrarArchivo = view.findViewById(R.id.btnDelete)
         btnBorrarDato = view.findViewById(R.id.btnDeleteData)
 
+        rgGenero = view.findViewById(R.id.rgGenero)
+        rdbMasc = view.findViewById(R.id.rdbMasculino)
+        rdbFem = view.findViewById(R.id.rdbFemenino)
+        //rgGenero.setOnCheckedChangeListener { radioGroup, i ->
+
+       // }
+
+
+
         btnGuardar.setOnClickListener {
+            val selectionOption = rgGenero!!.checkedRadioButtonId
+            rdbMasc = view.findViewById(selectionOption)
+
             if (edtNombre.text.toString().isBlank() && edtCorreo.text.toString().isBlank() && edtTelefono.text.toString().isBlank() && edtPassword.text.toString().isBlank()){
                 Toast.makeText(requireActivity(), "Alguno de los campos estan vacios", Toast.LENGTH_SHORT).show()
             }else{
@@ -60,6 +75,7 @@ class Information : Fragment() {
                 editor.putString("Correo", edtCorreo.text.toString())
                 editor.putString("Telefono", edtTelefono.text.toString())
                 editor.putString("Password", edtPassword.text.toString())
+                editor.putString("Genero", rdbMasc.text.toString())
                 editor.apply()
 
                 val valorGuardado = sharedPreferences?.getString("Usuario",null)
@@ -69,6 +85,8 @@ class Information : Fragment() {
                     edtCorreo.setText("")
                     edtTelefono.setText("")
                     edtPassword.setText("")
+                    rdbMasc.isChecked = false
+                    rdbFem.isChecked = false
                 }else{
                     Toast.makeText(requireActivity(), "Los datos no se guardaron", Toast.LENGTH_SHORT).show()
                 }
@@ -81,11 +99,19 @@ class Information : Fragment() {
             val email = sharedPreferences?.getString("Correo",null)
             val phone = sharedPreferences?.getString("Telefono",null)
             val pass = sharedPreferences?.getString("Password",null)
+            val genero = sharedPreferences?.getString("Genero",null)
 
             edtNombre.setText(nombreUsuario)
             edtCorreo.setText(email)
             edtTelefono.setText(phone)
             edtPassword.setText(pass)
+            if(genero.equals("Femenino")){
+                rdbFem.isChecked = true
+                rdbMasc.isChecked = false
+            }else{
+                rdbFem.isChecked = false
+                rdbMasc.isChecked = true
+            }
 
         }
 
