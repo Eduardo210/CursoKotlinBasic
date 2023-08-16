@@ -11,10 +11,13 @@
         android:id="@+id/txtNombre"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="100dp"
+        android:layout_marginEnd="20dp"
         android:gravity="center"
         android:text="@string/labelNombre"
-        android:textSize="48sp"
+        android:textSize="24sp"
+        app:fontFamily="@font/asset"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.455"
@@ -22,14 +25,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.318" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/btnRegresar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
         android:layout_marginEnd="40dp"
-        android:background="@color/design_default_color_error"
+        android:background="@drawable/backgroun_button"
         android:text="@string/txtButton"
+        android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="24sp"
         android:textStyle="bold"

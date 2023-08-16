@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.example.myapplication1.fragment.Utils
 
 class MainActivity : AppCompatActivity() {
     private lateinit var nombreUsuario : EditText
@@ -32,8 +33,8 @@ class MainActivity : AppCompatActivity() {
                     val user = User(nombreUsuario = nombreUsuario.text.toString() , password = password.text.toString())
                     var respuesta = user.iniciarSesion()
                     if (respuesta){
+                        Utils.Variable.NombreLogin = nombreUsuario.text.toString()
                         val intentIntercambio = Intent(this@MainActivity, ShowInformation::class.java)
-                        intent.putExtra("nombre", "Hola mundo")
                         startActivity(intentIntercambio)
                     }else{
                         Toast.makeText(this@MainActivity, "Acceso denegado", Toast.LENGTH_SHORT).show()
